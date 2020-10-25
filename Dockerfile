@@ -8,7 +8,7 @@ RUN apt-get -yqq update
 RUN apt-get -yqq install python3-pip python3-dev curl gnupg build-essential vim git
 
 # copy our application code
-MKDIR /PROJECT
+RUN mkdir /PROJECT
 WORKDIR /PROJECT
 
 # install required elements
