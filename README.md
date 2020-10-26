@@ -5,13 +5,15 @@ Docker file for developing the course project.
 
 2. Clone the course project repository, then open terminal and cd into it.
 
-3. Once in the folder with the Dockerfile use the command:
+3. We first have to build the course image. To do so use the command:
+`docker build . -t cisc204`
 
-  docker run -t -i -v localDirectory:containerDirectory ubuntu /bin/bash
+4. Now that we have the image we can run the image as a cotainer by using the command:
 
-  localDirectory is the folder on your computer you want to connect to the docker container.
+`docker run -t -i -v /modelProject:/PROJECT cisc204 /bin/bash`
 
-  containerDirectory is the name of the folder in the container you want to tie to your local directory. If the folder does not exist the container will  
-  automatically create it.
+/modelProject can be replaced with the path of whatever folder you want to link to the container
 
-4. From there the two folders should be connected, everything you do in one automatically updates in the other. For the project you will write the code in your local directory and then run it through the docker command line. A quick test to see if they're working is to create a file in the folder on your computer then use the terminal to see if it also shows up in the docker container.
+/PROJECT is the folder in the container that will be tied to your local directory
+
+5. From there the two folders should be connected, everything you do in one automatically updates in the other. For the project you will write the code in your local directory and then run it through the docker command line. A quick test to see if they're working is to create a file in the folder on your computer then use the terminal to see if it also shows up in the docker container.
