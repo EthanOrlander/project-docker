@@ -8,7 +8,7 @@ Docker file for developing the course project.
 3. We first have to build the course image. To do so use the command:
 `docker build . -t cisc204`
 
-4. Now that we have the image we can run the image as a cotainer by using the command: `docker run -t -i -v /modelProject:/PROJECT cisc204 /bin/bash`
+4. Now that we have the image we can run the image as a container by using the command: `docker run -t -i -v /modelProject:/PROJECT cisc204 /bin/bash`
 
     /modelProject can be replaced with the path of whatever folder you want to link to the container
 
