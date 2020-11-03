@@ -15,5 +15,9 @@ WORKDIR /PROJECT
 RUN pip3 install --upgrade pip
 RUN pip3 install nnf
 
+# add python alias
+RUN touch ~/.bash_aliases \
+    && echo alias python=\'python3\' > ~/.bash_aliases
+
 # default command to execute when container starts
 CMD /bin/bash
